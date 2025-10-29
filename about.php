@@ -2,9 +2,7 @@
 $page = "about";
 include("include/header.php"); ?>
 
-    <!--==============================
-    Breadcumb
-============================== -->
+    <!--============================== Breadcumb ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -15,67 +13,7 @@ include("include/header.php"); ?>
                 </ul>
             </div>
         </div>
-    </div><!--==============================
-Feature Area  
-==============================-->
-    <section class="space-top">
-        <div class="container">
-            <div class="row gy-4 justify-content-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
-                        </div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
-                        </div>
-                        <h3 class="box-title">Donor Friendly</h3>
-                        <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
-                        </div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
-                        </div>
-                        <h3 class="box-title">Fundraising Trust</h3>
-                        <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
-                        </div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
-                        </div>
-                        <h3 class="box-title">Charity Donate</h3>
-                        <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-card-bg-shape">
-                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
-                        </div>
-                        <div class="box-icon">
-                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
-                        </div>
-                        <h3 class="box-title">Treatment Help</h3>
-                        <p class="box-text">Stay updated with the latest news, events, and impact stories from our organization. Subscribe to our newsletter.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> 
+    </div>
     <!--============================== About Area ==============================-->
     <div class="overflow-hidden space" id="about-sec">
         <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
@@ -161,6 +99,66 @@ Feature Area
             </div>
         </div>
     </div>
+    <!--============================== Feature Area ==============================-->
+    <section class="">
+        <div class="container">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-bg-shape">
+                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                        </div>
+                        <div class="box-icon">
+                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
+                        </div>
+                        <h3 class="box-title">Donor Friendly</h3>
+                        <p class="box-text">We make giving simple, transparent, and impactful so every contribution creates meaningful change in the lives of those who need it most.</p>
+                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-bg-shape">
+                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                        </div>
+                        <div class="box-icon">
+                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
+                        </div>
+                        <h3 class="box-title">Fundraising Trust</h3>
+                        <p class="box-text">Your support helps us raise essential funds for community welfare initiatives, ensuring honesty, accountability, and long-term impact.</p>
+                        <a class="link-btn style2" href="about">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-bg-shape">
+                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                        </div>
+                        <div class="box-icon">
+                            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
+                        </div>
+                        <h3 class="box-title">Charity Donate</h3>
+                        <p class="box-text">Join hands with us to provide resources, care, and opportunities for underprivileged individuals and families in need.</p>
+                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-bg-shape">
+                            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img">
+                        </div>
+                        <div class="box-icon">
+                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
+                        </div>
+                        <h3 class="box-title">Treatment Help</h3>
+                        <p class="box-text">We assist medically vulnerable individuals with treatment support, healthcare guidance, and financial aid for a healthier tomorrow.</p>
+                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    
     <!--============================== Team Area ==============================-->
     <section class="space" id="team-sec" data-bg-src="assets/img/bg/gray-bg2.png">
         <div class="shape-mockup team-bg-shape3-1 d-xxl-block d-none" data-top="0%" data-left="0%" data-bottom="0"><img src="assets/img/shape/team_bg_shape3_1.png" alt="img"></div>

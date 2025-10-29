@@ -87,8 +87,7 @@ Service Area
                 <div class="col-lg-7">
                     <div class="title-area text-center">
                         <span class="sub-title">Charity Services</span>
-                        <h2 class="sec-title">We Do it for all People
-                            Humanist Services</h2>
+                        <h2 class="sec-title">Support for Every Life</h2>
                     </div>
                 </div>
             </div>
@@ -99,8 +98,8 @@ Service Area
                             <img src="assets/img/icon/service-icon/service-card-icon1-1.svg" alt="Icon">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="about">Healthy Foods</a></h3>
-                            <p class="box-text">Share stories and experiences from current volunteers to inspire others to join. Allow user to sign up for volunteer opportunities.</p>
+                            <h3 class="box-title">Health Initiatives</h3>
+                            <p class="box-text">Promoting better well-being by providing healthcare support, awareness programs, and essential medical assistance to underserved communities.</p>
                             <a href="about" class="th-btn">Learn More<i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
@@ -111,8 +110,8 @@ Service Area
                             <img src="assets/img/icon/service-icon/service-card-icon1-2.svg" alt="Icon">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="about">Educations</a></h3>
-                            <p class="box-text">Explore our charity website to discover impactful projects, opportunities, and ways to donate, helping those in need thrive.</p>
+                            <h3 class="box-title">Education Support</h3>
+                            <p class="box-text">Enabling access to quality learning through scholarships, resource distribution, and guidance for students from disadvantaged backgrounds.</p>
                             <a href="about" class="th-btn">Learn More<i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
@@ -123,8 +122,8 @@ Service Area
                             <img src="assets/img/icon/service-icon/service-card-icon1-3.svg" alt="Icon">
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="about">Medical Help</a></h3>
-                            <p class="box-text">Join us in making a difference! Our charity website connects you with volunteer, donation options, and inspiring stories.</p>
+                            <h3 class="box-title">Aid for Poor & Homeless</h3>
+                            <p class="box-text">Offering food, shelter, and relief assistance to individuals in need, ensuring dignity and support during vulnerable times with care, compassion, and hope.</p>
                             <a href="about" class="th-btn">Learn More<i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
