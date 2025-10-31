@@ -1,9 +1,10 @@
-<?php
-$page = "donation";
+<?php 
+$page = 'donation';
+include("administrator/admin/system/classes/Crud.php");
+$crud = new Crud();
+ini_set('display_errors', 1);
 include("include/header.php"); ?>
-    <!--==============================
-    Breadcumb
-============================== -->
+    <!--============================== Breadcumb ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -14,9 +15,8 @@ include("include/header.php"); ?>
                 </ul>
             </div>
         </div>
-    </div><!--==============================
-Donation Area  
-==============================-->
+    </div>
+    <!--============================== Donation Area ==============================-->
     <section class="space" id="donation-sec">
         <div class="container">
             <div class="row justify-content-center">
@@ -29,15 +29,21 @@ Donation Area
                 </div>
             </div>
             <div class="row gy-30">
+                <?php
+                    $readdonations = $crud->Read("donation", "`status`='1' order by id desc");
+                    if (!empty($readdonations)) {
+                        foreach ($readdonations as $key) {
+                            $date = strtotime($key['upload_date']);
+                ?>
                 <div class="col-xl-6">
                     <div class="donation-card style3">
                         <div class="box-thumb">
-                            <img src="assets/img/donation/donation2-1.png" alt="image">
+                            <img src="administrator/admin/system/<?php echo htmlspecialchars($key['post_image']); ?>" alt="image">
                             <div class="donation-card-tag">85%</div>
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Your Little Help Can Heal Their Helps</a></h3>
+                            <h3 class="box-title"><?= htmlspecialchars(substr($key['heading'], 0, 60)); ?></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -50,11 +56,16 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donate-now" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
 
+                
+                <?php
+                        }
+                    }
+                ?>
                 <div class="col-xl-6">
                     <div class="donation-card style3">
                         <div class="box-thumb">
@@ -63,7 +74,7 @@ Donation Area
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Help Children poor Insurance & Medical</a></h3>
+                            <h3 class="box-title"><a href="donation-details.html">Help Children poor Insurance & Medical</a></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -76,7 +87,7 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donation-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +100,7 @@ Donation Area
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Help us touch their lives of these youths</a></h3>
+                            <h3 class="box-title"><a href="donation-details.html">Help us touch their lives of these youths</a></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -102,7 +113,7 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donation-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +126,7 @@ Donation Area
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Raise Fund for Clean & Healthy Water</a></h3>
+                            <h3 class="box-title"><a href="donation-details.html">Raise Fund for Clean & Healthy Water</a></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -128,7 +139,7 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donation-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +152,7 @@ Donation Area
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Be hungry no more & Leave no one behind</a></h3>
+                            <h3 class="box-title"><a href="donation-details.html">Be hungry no more & Leave no one behind</a></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -154,7 +165,7 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donation-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -167,7 +178,7 @@ Donation Area
                             <div class="donation-card-shape" data-mask-src="assets/img/donation/donation-card-shape2-1.png"></div>
                         </div>
                         <div class="box-content">
-                            <h3 class="box-title"><a href="blog-details.html">Medical Health or People React Acuter.</a></h3>
+                            <h3 class="box-title"><a href="donation-details.html">Medical Health or People React Acuter.</a></h3>
                             <p>Join our community of dedicated supporter by becoming member. Enjoy exclusive benefit.</p>
                             <div class="donation-card_progress-wrap">
 
@@ -180,77 +191,12 @@ Donation Area
                                     <span class="donation-card_goal">Goal <span class="donation-card_goal-number">$60,000.00</span></span>
                                 </div>
                             </div>
-                            <a href="blog-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="donation-details.html" class="th-btn style6">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!--==============================
-Brand Area  
-==============================-->
-    <div class="space-bottom overflow-hidden brand-area-1">
-        <div class="container">
-            <div class="brand-wrap1 p-0 m-0 text-center">
-                <h3 class="brand-wrap-title">Trusted by over <span class="text-theme2"><span class="counter-number">90</span>K+</span> companies worldwide</h3>
-                <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog.html" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <?php include("include/footer.php"); ?>

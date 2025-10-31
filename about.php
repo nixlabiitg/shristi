@@ -34,7 +34,7 @@ include("include/header.php"); ?>
                 <div class="col-xl-5">
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
-                            <span class="sub-title before-none">About Us Donat</span>
+                            <span class="sub-title before-none">About Us</span>
                             <h2 class="sec-title">Shristi International Society: Empowering Communities, Enriching Lives</h2>
                             <p class="">Established in 2013, Shristi International Society is a non-profit government organization
                             founded with a vision to serve society through meaningful initiatives across diverse fields.
@@ -113,7 +113,7 @@ include("include/header.php"); ?>
                         </div>
                         <h3 class="box-title">Donor Friendly</h3>
                         <p class="box-text">We make giving simple, transparent, and impactful so every contribution creates meaningful change in the lives of those who need it most.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                        <a class="link-btn style2" href="donate-now">Donate Now <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -126,7 +126,7 @@ include("include/header.php"); ?>
                         </div>
                         <h3 class="box-title">Fundraising Trust</h3>
                         <p class="box-text">Your support helps us raise essential funds for community welfare initiatives, ensuring honesty, accountability, and long-term impact.</p>
-                        <a class="link-btn style2" href="about">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                        <a class="link-btn style2" href="donate-now">Donate Now <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -139,7 +139,7 @@ include("include/header.php"); ?>
                         </div>
                         <h3 class="box-title">Charity Donate</h3>
                         <p class="box-text">Join hands with us to provide resources, care, and opportunities for underprivileged individuals and families in need.</p>
-                        <a class="link-btn style2" href="about.html">View Details <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                        <a class="link-btn style2" href="donate-now">Donate Now <i class="fa-solid fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">

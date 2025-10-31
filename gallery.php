@@ -1,10 +1,15 @@
 <?php
-$page = "gallery";
-include("include/header.php"); ?>
+$page = 'gallery';
+include("administrator/admin/system/classes/Crud.php");
+$crud = new Crud();
+ini_set('display_errors', 1);
+include("include/header.php"); 
 
-    <!--==============================
-    Breadcumb
-============================== -->
+$category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
+?>
+
+
+    <!--============================== Breadcumb ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
         <div class="container">
             <div class="breadcumb-content">
@@ -15,84 +20,36 @@ include("include/header.php"); ?>
                 </ul>
             </div>
         </div>
-    </div><!--==============================
-Gallery Area  
-==============================-->
+    </div>
+    <!--============================== Gallery Area  ==============================-->
     <div class="overflow-hidden space">
         <div class="container">
             <div class="row gy-30 gx-30 filter-active">
+                <?php 
+                    if ($category_id != '') {
+                        $gallery = $crud->Read("gallery", "`status`='1' AND `category`='$category_id' ORDER BY id DESC");
+                    } else {
+                        $gallery = $crud->Read("gallery", "`status`='1' ORDER BY id DESC");
+                    }
+
+                    if (!empty($gallery)) {
+                        foreach($gallery as $img){
+                ?>
                 <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
                     <div class="gallery-card">
                         <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_1.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_1.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
+                            <img src="administrator/admin/system/<?= $img['image'] ?>" alt="gallery image">
+                            <a href="administrator/admin/system/<?= $img['image'] ?>" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_2.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_2.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_3.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_3.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_4.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_4.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_6.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_6.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_5.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_5.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_7.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_7.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_9.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_9.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xxl-auto col-lg-4 filter-item">
-                    <div class="gallery-card">
-                        <div class="gallery-img">
-                            <img src="assets/img/gallery/gallery_1_8.png" alt="gallery image">
-                            <a href="assets/img/gallery/gallery_1_8.png" class="icon-btn popup-image"><i class="fas fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
+                
+                <?php 
+                        }
+                    } else {
+                        echo "<div class='col-12 text-center'><h5>No images found for this category.</h5></div>";
+                    }
+                ?>
             </div>
         </div>
     </div>

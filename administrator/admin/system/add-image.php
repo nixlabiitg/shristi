@@ -13,11 +13,9 @@ if(isset($_POST['upload_news'])) {
     $ext = end($ext);
     $ext = strtolower($ext);
 
-     // Generate a unique and encrypted name for the image
      $encryptedName = md5(uniqid(rand(), true)) . '.' . $ext;
      $path = "lib/images/gallery/" . $encryptedName;
 
-    // Check if the file size is less than or equal to 200 KB
    $maxFileSize =  300 * 1024; // 200 KB in bytes
    $fileSize = $_FILES['gallery_img']['size'];
     if ($fileSize <= $maxFileSize) {

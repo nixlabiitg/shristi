@@ -1,16 +1,21 @@
 <?php
-$page = "home";
-include("include/header.php"); ?>
-    <!--==============================
-Hero Area
-==============================-->
+$page = 'gallery';
+include("administrator/admin/system/classes/Crud.php");
+$crud = new Crud();
+ini_set('display_errors', 1);
+include("include/header.php"); 
+
+$category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
+?>
+
+    <!--============================== Hero Area ==============================-->
     <div class="th-hero-wrapper hero-1" id="hero">
         <div class="swiper th-slider hero-slider1" id="heroSlide1" data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="hero-inner" data-bg-src="assets/img/hero/hero_bg_1_1.jpg" data-overlay="black4" data-opacity="5">
                         <div class="hero-bg-shape1-1">
-                            <img src="assets/img/hero/hero-bg-shape1-1.png" alt="img">
+                            <img src="assets/img/home/home.png" alt="img">
                         </div>
                         <div class="container">
                             <div class="row justify-content-center">
@@ -25,7 +30,7 @@ Hero Area
                                         </h1>
                                         <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
                                             <a href="contact" class="th-btn style4">Discover Now <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="th-btn style5 popup-video"><i class="fas fa-play me-2"></i> Watch Video</a>
+                                            <a href="about" class="th-btn style5"><i class="fas fa-play me-2"></i>Learn More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +57,7 @@ Hero Area
                                         </h1>
                                         <div class="btn-wrap justify-content-center" data-ani="slideinup" data-ani-delay="0.7s">
                                             <a href="contact" class="th-btn style4">Discover Now <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="th-btn style5 popup-video"><i class="fas fa-play me-2"></i> Watch Video</a>
+                                            <a href="about" class="th-btn style5 popup-video"><i class="fas fa-play me-2"></i> Learn More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -64,9 +69,7 @@ Hero Area
         </div>
     </div>
     <!--======== / Hero Section ========-->
-    <!--==============================
-Service Area  
-==============================-->
+    <!--============================== Service Area ==============================-->
     <section class="overflow-hidden space" id="service-sec" data-bg-src="assets/img/bg/gray-bg1.png" data-overlay="gray" data-opacity="6">
         <div class="shape-mockup service-bg-shape1-1 d-xxl-inline-block d-none" data-top="15%" data-left="0">
             <div class="color-masking">
@@ -132,9 +135,7 @@ Service Area
         </div>
     </section>
 
-    <!--==============================
-About Area  
-==============================-->
+    <!--============================== About Area ==============================-->
     <div class="overflow-hidden mb-50" id="about-sec">
         <div class="shape-mockup about-bg-shape1-1 jump-reverse" data-top="10%" data-right="5%">
             <img src="assets/img/shape/heart-shape1.png" alt="shape">
@@ -154,7 +155,7 @@ About Area
                 <div class="col-xl-5">
                     <div class="about-wrap1">
                         <div class="title-area mb-30">
-                            <span class="sub-title before-none">About Us Donat</span>
+                            <span class="sub-title before-none">About Us</span>
                             <h2 class="sec-title">Shristi International Society: Empowering Communities, Enriching Lives</h2>
                             <p class="">Established in 2013, Shristi International Society is a non-profit government organization
                             founded with a vision to serve society through meaningful initiatives across diverse fields.
@@ -183,9 +184,7 @@ About Area
             </div>
         </div>
     </div>
-    <!--==============================
-Cta Area  
-==============================-->
+    <!--============================== Cta Area ==============================-->
     <div class="cta-area-1">
         <div class="container z-index-common mt-40 pt-40" data-pos-for="#donation-sec" data-sec-pos="bottom-half">
             <div class="row gy-4">
@@ -194,9 +193,9 @@ Cta Area
                         <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-right="0" data-mask-src="assets/img/shape/cta_shape1_1.png">
                             <img src="assets/img/shape/cta_shape1_1.png" alt="img">
                         </div>
-                        <h3 class="box-title">Become a volunteer</h3>
-                        <p class="box-text">Provide resources such as reports, infographics, and educational materials related to the charity's cause. Use a clear and intuitive navigation menu to help users find information quickly.</p>
-                        <a href="contact" class="th-btn style5">Learn More <i class="fas fa-arrow-up-right ms-2"></i></a>
+                        <h3 class="box-title">Reach Us Anytime</h3>
+                        <p class="box-text">Whenever you need us, we are here — reach out to us anytime for questions, assistance, or opportunities to get involved, and we will be happy to help with dedication and respect.</p>
+                        <a href="tel:+919435109844" class="th-btn style5">Contact Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -204,16 +203,15 @@ Cta Area
                         <div class="shape-mockup cta-card-bg-shape" data-bottom="0" data-left="0" data-mask-src="assets/img/shape/cta_shape1_1.png">
                             <img src="assets/img/shape/cta_shape1_1.png" alt="img">
                         </div>
-                        <h3 class="box-title">Join Us volunteer</h3>
-                        <p class="box-text">Provide resources such as reports, infographics, and educational materials related to the charity's cause. Use a clear and intuitive navigation menu to help users find information quickly.</p>
-                        <a href="contact" class="th-btn style5">Join Us Now <i class="fas fa-arrow-up-right ms-2"></i></a>
+                        <h3 class="box-title">Be a Part of the Change</h3>
+                        <p class="box-text">With your kind support, we can provide help where it's needed most—bringing education, nourishment, shelter, and care to those facing hardship. One act of kindness can inspire countless lives.</p>
+                        <a href="#" class="th-btn style5">Donate Now <i class="fas fa-arrow-up-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--==============================
-Donation Area  
-==============================-->
+    </div>
+    <!--============================== Donation Area ==============================-->
     <section class="space bg-gray" data-bg-src="assets/img/bg/donation-bg1-1.png" id="donation-sec">
         <div class="shape-mockup donation-bg-shape1-1" data-bottom="0" data-right="0"><img src="assets/img/shape/donation-shape1-1.png" alt="shape"></div>
         <div class="container">
@@ -384,9 +382,7 @@ Donation Area
             </div>
         </div>
     </section>
-    <!--==============================
-Cta Area  
-==============================-->
+    <!--============================== Cta Area ==============================-->
     <section class="cta-area-2 space overflow-hidden bg-theme-dark" id="contact-sec">
         <div class="cta-bg-shape2-1 shape-mockup jump d-lg-block d-none" data-top="-22%" data-left="2%"><img src="assets/img/shape/cta_shape2_1.png" alt="img"></div>
         <div class="cta-bg-shape2-2 shape-mockup jump-reverse d-lg-block d-none" data-top="-12%" data-right="-5%"><img src="assets/img/shape/cta_shape2_2.png" alt="img"></div>
@@ -402,9 +398,8 @@ Cta Area
                 </div>
             </div>
         </div>
-    </section><!--==============================
-Story Area  
-==============================-->
+    </section>
+    <!--============================== Story Area ==============================-->
     <div class="story-area-1 overflow-hidden space">
         <div class="container">
             <div class="row gy-40 justify-content-between flex-row-reverse align-items-center">
@@ -428,7 +423,7 @@ Story Area
                             </div>
                             <div class="year-counter">
                                 <p class="year-counter_text">Years of <span>Experience</span></p>
-                                <div class="year-counter_number"><span class="counter-number">16</span></div>
+                                <div class="year-counter_number"><span class="counter-number">12</span></div>
                             </div>
                         </div>
                     </div>
@@ -448,9 +443,8 @@ Story Area
 
             </div>
         </div>
-    </div><!--==============================
-Team Area  
-==============================-->
+    </div>
+    <!--============================== Team Area ==============================-->
     <section class="space-bottom team-area-1">
         <div class="shape-mockup team-bg-shape1-1 spin d-xxl-block d-none" data-top="0%" data-right="3%"><img src="assets/img/shape/hand-group-shape1.png" alt="img"></div>
         <div class="container">
@@ -675,9 +669,7 @@ Team Area
                 <button data-slider-next="#teamSlider1" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
             </div>
         </div>
-    </section><!--==============================
-Video Area  
-==============================-->
+    </section><!--============================== Video Area ==============================-->
     <div class="video-area-1 space bg-theme overflow-hidden">
         <div class="shape-mockup video-bg-shape1-1" data-top="0" data-left="0">
             <img src="assets/img/shape/video_shape1_1.png" alt="img">
@@ -689,9 +681,8 @@ Video Area
             <div class="row gy-40 justify-content-between">
                 <div class="col-xl-5">
                     <div class="title-area mb-35">
-                        <h2 class="sec-title text-white">We Always Help The
-                            Needy People</h2>
-                        <p class="text-white">Discover the inspiring stories of individuals and communities transformed by our programs. Our success stories highlight the real-life impact of your donations.</p>
+                        <h2 class="sec-title text-white">Transforming Hardship Into Hope</h2>
+                        <p class="text-white">Explore how our initiatives are transforming lives by offering vital support, meaningful opportunities, and long-term empowerment to those who are navigating challenging situations.</p>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 counter-card-wrap">
@@ -723,80 +714,14 @@ Video Area
                 <div class="col-xl-6">
                     <div class="video-thumb1-1 video-box-center">
                         <img src="assets/img/normal/video-thumb1-1.png" alt="img">
-                        <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style2 popup-video"><i class="fa-sharp fa-solid fa-play"></i></a>
+                        <a href="about" class="play-btn style2"><i class="fa-sharp fa-solid fa-play"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--==============================
-Brand Area  
-==============================-->
-    <div class="overflow-hidden brand-area-1">
-        <div class="container">
-            <div class="brand-wrap1 bg-gray text-center" data-mask-src="assets/img/shape/brand-bg-shape1.png">
-                <h3 class="brand-wrap-title">Trusted by over <span class="text-theme2"><span class="counter-number">90</span>K+</span> companies worldwide</h3>
-                <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5", "spaceBetween": "90"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-1.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-2.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-3.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-4.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="blog" class="brand-box">
-                                <img src="assets/img/brand/brand1-5.svg" alt="Brand Logo">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-Testimonial Area  
-==============================-->
+    
+    <!--============================== Testimonial Area ==============================-->
     <section class="testi-area-1 space overflow-hidden" id="testi-sec">
         <div class="shape-mockup testi-bg-shape1-1 jump-reverse d-xl-block d-none" data-top="5%" data-right="0">
             <img src="assets/img/shape/footer-bg-shape3.png" alt="img">
@@ -906,9 +831,7 @@ Testimonial Area
             </div>
         </div>
     </section>
-    <!--==============================
-Project Area  
-==============================-->
+    <!--============================== Gallery Area ==============================-->
     <section class="overflow-hidden">
         <div class="project-wrap1 space th-radius overflow-hidden" data-bg-src="assets/img/bg/gray-bg2.png" data-overlay="gray" data-opacity="5">
             <div class="shape-mockup project-bg-shape1-1" data-top="0" data-right="0">
@@ -918,68 +841,50 @@ Project Area
                 <div class="row justify-content-md-between align-items-center">
                     <div class="col-lg-5 col-md-6">
                         <div class="title-area">
-                            <span class="sub-title before-none">Complete Projects</span>
-                            <h2 class="sec-title">Our Recent Project</h2>
+                            <span class="sub-title before-none">Journey of Change</span>
+                            <h2 class="sec-title">Our Work in Pictures</h2>
                         </div>
                     </div>
                     <div class="col-auto">
                         <div class="sec-btn">
-                            <a href="contact" class="th-btn">View All Project<i class="fas fa-arrow-up-right ms-2"></i></a>
+                            <a href="gallery" class="th-btn">View All Pictures<i class="fas fa-arrow-up-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="slider-area">
                     <div class="swiper th-slider" id="ProjectSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
                         <div class="swiper-wrapper">
+                            <?php 
+                                if ($category_id != '') {
+                                    $gallery = $crud->Read("gallery", "`status`='1' AND `category`='$category_id' ORDER BY id DESC");
+                                } else {
+                                    $gallery = $crud->Read("gallery", "`status`='1' ORDER BY id DESC");
+                                }
+
+                                if (!empty($gallery)) {
+                                    foreach($gallery as $img){
+                            ?>
                             <!-- Single Item -->
                             <div class="swiper-slide">
                                 <div class="project-card">
                                     <div class="project-img">
-                                        <img src="assets/img/project/project_1_1.png" alt="project image">
-                                    </div>
-                                    <div class="project-content">
-                                        <div class="project-card-bg-shape" data-mask-src="assets/img/shape/project-card-bg-shape1-1.png"></div>
-                                        <h3 class="project-title"><a href="#">Compassion Connect</a></h3>
-                                        <p class="project-subtitle">Stronger Community</p>
+                                        <a href="administrator/admin/system/<?= $img['image'] ?>" class="popup-image"><img style="width:100%; height:250px; object-fit:cover; border-radius:6px;" src="administrator/admin/system/<?= $img['image'] ?>" alt="gallery image"></a>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="swiper-slide">
-                                <div class="project-card">
-                                    <div class="project-img">
-                                        <img src="assets/img/project/project_1_2.png" alt="project image">
-                                    </div>
-                                    <div class="project-content">
-                                        <div class="project-card-bg-shape" data-mask-src="assets/img/shape/project-card-bg-shape1-1.png"></div>
-                                        <h3 class="project-title"><a href="#">Child Educations</a></h3>
-                                        <p class="project-subtitle">Charity & Fundraising</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="project-card">
-                                    <div class="project-img">
-                                        <img src="assets/img/project/project_1_3.png" alt="project image">
-                                    </div>
-                                    <div class="project-content">
-                                        <div class="project-card-bg-shape" data-mask-src="assets/img/shape/project-card-bg-shape1-1.png"></div>
-                                        <h3 class="project-title"><a href="#">Nurturing Health</a></h3>
-                                        <p class="project-subtitle">Healing Hearts</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <?php 
+                                    }
+                                } else {
+                                    echo "<div class='col-12 text-center'><h5>No images found for this category.</h5></div>";
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--==============================
-Faq Area
-==============================-->
+    <!--============================== Faq Area ==============================-->
     <div class="overflow-hidden space-top">
         <div class="shape-mockup faq-bg-shape1-1 jump" data-mask-src="assets/img/normal/faq_1_3.png" data-top="15%" data-right="2%">
             <img src="assets/img/normal/faq_1_3.png" alt="img">
@@ -1011,11 +916,11 @@ Faq Area
 
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-1">
-                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">What motivates you to donate to our charity?</button>
+                                    <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">What is Shristi International Society?</button>
                                 </div>
                                 <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support, there are many ways to lend your talents. Find the perfect fit for your skills and interests.</p>
+                                        <p class="faq-text">Shristi International Society is a non-profit organization founded in 2013 focused on serving underprivileged communities through initiatives in health, education, women empowerment, culture, music, and environmental action.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1023,11 +928,11 @@ Faq Area
 
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">How did you hear about our organization?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Is Shristi International Society a government-registered NGO?</button>
                                 </div>
                                 <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support, there are many ways to lend your talents. Find the perfect fit for your skills and interests.</p>
+                                        <p class="faq-text">Yes. Shristi International Society is a government-registered nonprofit organization working to create positive social impact across India.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1035,11 +940,11 @@ Faq Area
 
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">How frequently do you prefer to volunteer?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">How can I donate to Shristi International Society?</button>
                                 </div>
                                 <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support, there are many ways to lend your talents. Find the perfect fit for your skills and interests.</p>
+                                        <p class="faq-text">You can donate online through our official donation page. We also accept contributions via bank transfer and offline donations. Every donation supports our social projects.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1047,11 +952,11 @@ Faq Area
 
                             <div class="accordion-card">
                                 <div class="accordion-header" id="collapse-item-4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">What motivated you to participate in this event?</button>
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">How are donations used?</button>
                                 </div>
                                 <div id="collapse-4" class="accordion-collapse collapse " aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <p class="faq-text">Explore the variety of volunteer opportunities available. From event planning and fundraising to fieldwork and administrative support, there are many ways to lend your talents. Find the perfect fit for your skills and interests.</p>
+                                        <p class="faq-text">Donations are allocated to support education, health drives, food distribution, women empowerment initiatives, environmental programs, and cultural development projects. We ensure complete transparency in fund utilization.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1061,11 +966,7 @@ Faq Area
             </div>
         </div>
     </div>
-
-
-    <!--==============================
-Blog Area  
-==============================-->
+    <!--============================== Blog Area ==============================-->
     <section class="space" id="blog-sec">
         <div class="container">
             <div class="title-area text-center">
@@ -1075,126 +976,33 @@ Blog Area
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="blogSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}, "autoHeight": "true"}'>
                     <div class="swiper-wrapper">
+                        <?php
+                            $readblogs = $crud->Read("blog", "`status`='1' order by id desc");
+                            if (!empty($readblogs)) {
+                                foreach ($readblogs as $key) {
+                                    $date = strtotime($key['upload_date']);
+                        ?>
                         <div class="swiper-slide">
                             <div class="blog-card">
                                 <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
-                                    </a>
+                                    <a href="blog-details?blog-id=<?= $key['id'] ?>" data-cursor-text="View"><img style="width:100%; height:250px; object-fit:cover;" src="administrator/admin/system/<?php echo htmlspecialchars($key['post_image']); ?>" alt="Blog Image"></a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
                                     <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>July 16, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
+                                        <i class="fas fa-calendar"></i> <?= date('d F Y', $date); ?>
+                                        <i class="fas fa-tags"></i> Education
                                     </div>
-                                    <h3 class="box-title"><a href="blog-details">See Your Impact: Transparent Donation Tracking</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
+                                    <h3 class="box-title"><a href="blog-details?blog-id=<?= $key['id'] ?>"><?= htmlspecialchars(substr($key['heading'], 0, 60)); ?></a></h3>
+                                    <a href="blog-details?blog-id=<?= $key['id'] ?>" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                                    <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>March 24, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details">Every Contribution Counts: Make a Difference</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                                    <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>June 30, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details">Real Stories, Real Impact: Your Donations at Work</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                                    <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>July 16, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details">See Your Impact: Transparent Donation Tracking</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                                    <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>March 24, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details">Every Contribution Counts: Make a Difference</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <a href="blog-details">
-                                        <div class="blog-img-shape1" data-mask-src="assets/img/blog/blog-card-bg-shape1-2.png"></div>
-                                        <img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-card-shape" data-mask-src="assets/img/blog/blog-card-bg-shape1-1.png"></div>
-                                    <div class="blog-meta">
-                                        <a href="blog"><i class="fas fa-calendar"></i>June 30, 2025</a>
-                                        <a href="blog"><i class="fas fa-tags"></i>Education</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details">Real Stories, Real Impact: Your Donations at Work</a></h3>
-                                    <a href="blog-details" class="th-btn">Read More <i class="fas fa-arrow-up-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
+                        <?php
+                                }
+                            }
+                        ?>
+                        
                     </div>
                 </div>
                 <button data-slider-prev="#blogSlider1" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>

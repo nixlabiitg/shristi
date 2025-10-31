@@ -320,21 +320,23 @@
                                 <li><a href="work">Our Work</a></li>
                                 <li><a href="gallery">Gallery</a></li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">Pages</a>
+                                    <a href="#">News and Events</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="news">News</a></li>
+                                        <li><a href="event">Events</a></li>
+                                        <li><a href="press">Press Release</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">Learn More</a>
                                     <ul class="sub-menu">
                                         <li><a href="team">Volunteers</a></li>
-                                        <li><a href="team-details">Volunteer Details</a></li>
-                                        <li><a href="add-team">Become A Volunteer</a></li>
                                         <li><a href="faq">FAQS</a></li>
                                         <li><a href="testimonial">Testimonials</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog">Blog</a></li>
-                                        <li><a href="blog-details">Blog Details</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="blog">Blog</a>
                                 </li>
                                 <li>
                                     <a href="contact">Contact Us</a>
@@ -344,7 +346,7 @@
                         <p class="header-notice"><img class="me-1" src="assets/img/icon/heart-icon.svg" alt="img">Are you ready to help them? Let’s become a volunteers...</p>
                     </div>
                     <div class="header-button">
-                        <a href="contact" class="th-btn style3 d-lg-block d-none"><i class="fas fa-heart me-2"></i> Donate Now</a>
+                        <a href="donate-now" class="th-btn style3 d-lg-block d-none"><i class="fas fa-heart me-2"></i> Donate Now</a>
                         <button type="button" class="icon-btn th-menu-toggle d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
                 </div>

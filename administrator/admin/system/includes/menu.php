@@ -7,11 +7,21 @@
                 <span>Home</span>
             </a>
         </li>
-        <li href="javascript:void(0);">
-            <a href="donation">
+            <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">volunteer_activism</i>
                 <span>Donation</span>
             </a>
+            <ul class="ml-menu">
+                 <li>
+                    <a href="upload_donation">Add Donation Detail</a>
+                </li>
+                <li>
+                    <a href="manage_donation">Donation Detail</a>
+                </li>
+                <li>
+                    <a href="donation">Donation List</a>
+                </li>
+            </ul>
         </li>
 
         <li>
@@ -72,13 +82,13 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                <a href="gallery-category">Event Category</a>
+                <a href="gallery-category">Image Category</a>
                 </li>
                 <li>
-                    <a href="add-image">Add Event</a>
+                    <a href="add-image">Add Image</a>
                 </li>
                 <li>
-                    <a href="view-gallery">Manage Event</a>
+                    <a href="view-gallery">Manage Image</a>
                 </li>
 
             </ul>
