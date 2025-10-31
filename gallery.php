@@ -7,8 +7,6 @@ include("include/header.php");
 
 $category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
 ?>
-
-
     <!--============================== Breadcumb ============================== -->
     <div class="breadcumb-wrapper " data-bg-src="assets/img/bg/breadcumb-bg.jpg" data-overlay="theme">
         <div class="container">
